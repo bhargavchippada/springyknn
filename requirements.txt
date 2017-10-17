@@ -1,0 +1,10 @@
+Pillow
+ipython
+jupyter
+notebook
+numpy
+matplotlib
+scipy
+scikit-learn
+tqdm
+networkx
