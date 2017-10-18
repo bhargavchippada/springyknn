@@ -1,6 +1,7 @@
 ### Installation
 - virtualenv -p python3 .env
 - source .env/bin/activate
+- install pytorch
 - pip install -r requirements.txt
 - deactivate
 
