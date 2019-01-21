@@ -126,8 +126,8 @@ class SpringyKNN:
                 continue
             else:
                 graph_nodes.add(p)
-                nn_dist = neighbor_dist[[nn_indices]]
-                nn_pivots = neighbors[[nn_indices]]
+                nn_dist = neighbor_dist[np.asarray(nn_indices)]
+                nn_pivots = neighbors[np.asarray(nn_indices)]
                 for j in range(len(nn_indices)):
                     pi = p
                     pj = nn_pivots[j]
@@ -196,7 +196,7 @@ class SpringyKNN:
         custom_cmap = ListedColormap(colors)
         for n in G.nodes():
             nx.draw_networkx_nodes(G, pos, with_labels=False, nodelist=[n], node_size=5,
-                                   node_color=colors[(int(y[n])-y_min)])
+                                   node_color=[colors[(int(y[n])-y_min)]])
         sm = plt.cm.ScalarMappable(cmap=custom_cmap, norm=plt.Normalize(vmin=y_min, vmax=y_max))
         sm.set_array([])
         plt.axis('off')
